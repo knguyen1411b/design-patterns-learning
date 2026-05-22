@@ -1,0 +1,147 @@
+---
+title: Tổng quan mẫu thiết kế
+summary: Học và tra cứu 23 mẫu thiết kế phần mềm GoF bằng Java
+category: creational
+level: beginner
+featured: true
+---
+
+# Design Patterns Atlas
+
+Xây dựng nền tảng vững chắc về **23 Design Patterns (Gang of Four)** thông qua giải thích trực quan, sơ đồ, ví dụ Java và tình huống thực tế.
+
+> Mục tiêu không phải ghi nhớ tên pattern mà hiểu **khi nào dùng**, **vì sao dùng**, và **trade-off của nó**.
+
+---
+
+## Design Pattern là gì?
+
+Design Pattern là những giải pháp đã được kiểm chứng cho các vấn đề lặp lại trong thiết kế phần mềm.
+
+Pattern không phải đoạn code có thể copy-paste, mà là:
+
+- Cách tổ chức mã nguồn
+- Cách phân chia trách nhiệm
+- Cách giảm coupling (sự phụ thuộc chéo)
+- Cách tăng khả năng mở rộng
+
+---
+
+## Cấu trúc học
+
+Mỗi bài học gồm:
+
+1. Mục tiêu (Intent)
+2. Bối cảnh vấn đề (Problem Scenario)
+3. Giải pháp (Solution)
+4. Sơ đồ UML & Cấu trúc thành phần (UML & Structure)
+5. Ví dụ mã nguồn Java hoàn chỉnh (Java Code Example)
+6. Luồng hoạt động (Workflow)
+7. Ưu và nhược điểm (Pros & Cons)
+8. So sánh với các pattern khác (Comparison)
+9. Ứng dụng thực tế (Real-world Use Cases)
+
+---
+
+## Nhóm Design Patterns
+
+### Creational (Khởi tạo)
+
+Tập trung vào việc tạo đối tượng một cách linh hoạt, che giấu logic khởi tạo phức tạp.
+
+Các pattern tiêu biểu:
+
+- Factory Method
+- Abstract Factory
+- Builder
+- Prototype
+- Singleton
+
+Ví dụ Java:
+
+```java
+Notification notification = NotificationFactory.create("email");
+```
+
+---
+
+### Structural (Cấu trúc)
+
+Tập trung vào cách ghép các class và object để tạo ra các cấu trúc lớn hơn, linh hoạt hơn.
+
+Các pattern tiêu biểu:
+
+- Adapter
+- Bridge
+- Composite
+- Decorator
+- Facade
+- Flyweight
+- Proxy
+
+Ví dụ Java:
+
+```java
+Logger logger = new TimestampDecorator(new ConsoleLogger());
+```
+
+---
+
+### Behavioral (Hành vi)
+
+Tập trung vào sự tương tác và phân chia trách nhiệm giữa các object.
+
+Các pattern tiêu biểu:
+
+- Observer
+- Strategy
+- State
+- Command
+- Mediator
+- Iterator
+- Visitor
+- Memento
+- Interpreter
+- Template Method
+- Chain of Responsibility
+
+Ví dụ Java:
+
+```java
+paymentContext.setStrategy(new PaypalPayment());
+```
+
+---
+
+## Lộ trình học đề xuất
+
+Nếu mới bắt đầu, bạn nên tiếp cận theo thứ tự sau:
+
+1. **Singleton** (Đơn giản nhất để bắt đầu)
+2. **Factory Method** (Mẫu khởi tạo phổ biến nhất)
+3. **Builder** (Rất hữu ích khi đối tượng có cấu trúc phức tạp)
+4. **Strategy** (Học cách cô lập thuật toán)
+5. **Observer** (Nền tảng của kiến trúc hướng sự kiện)
+6. **Decorator** (Mở rộng tính năng động không cần kế thừa)
+7. **Adapter** (Giúp các hệ thống không tương thích làm việc cùng nhau)
+8. **State** / **Command**
+9. Các pattern còn lại.
+
+---
+
+## Một số nguyên tắc liên quan
+
+Design Patterns luôn đi đôi với các nguyên tắc thiết kế cốt lõi:
+
+- **SOLID**: 5 nguyên tắc thiết kế hướng đối tượng.
+- **DRY** (Don't Repeat Yourself) & **KISS** (Keep It Simple, Stupid).
+- **Composition over Inheritance**: Ưu tiên đóng gói hơn kế thừa.
+- **Dependency Injection**: Giảm kết dính chặt.
+
+---
+
+## Ghi nhớ
+
+> Pattern tồn tại để giải quyết vấn đề thực tế, không phải để làm phức tạp hóa mã nguồn. Đừng cố gắng áp dụng khi không thực sự cần thiết.
+
+Bắt đầu từ thanh điều hướng bên trái để chọn một mẫu thiết kế và bắt đầu học!

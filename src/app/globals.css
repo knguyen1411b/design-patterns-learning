@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, [data-theme="dark"], .dark *, [data-theme="dark"] *));
+
+@import 'fumadocs-ui/css/black.css';
+@import 'fumadocs-ui/css/preset.css';
+@import '@heroui/styles';
+
+:root {
+    --fd-layout-width: 1400px;
+    --color-fd-background: var(--background);
+    --color-fd-foreground: var(--foreground);
+    --color-fd-primary: oklch(0.14 0 0);
+    --color-fd-secondary: #f9f9f9;
+    --color-fd-card: #f9f9f9;
+    --spacing-fd-container: 1120px;
+    --color-fd-border: oklch(0 0 0 / 10%);
+    --color-fd-accent: #f9f9f9;
+    --color-fd-muted-foreground: var(--color-neutral-500);
+    --color-backdrop: rgba(255, 255, 255, 0.4);
+    --animate-fd-fade-in: fd-fade-in 200ms ease-out forwards;
+    --animate-fd-fade-out: fd-fade-out 150ms ease-out forwards;
+    --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme='dark'],
+.dark {
+    --color-fd-primary: oklch(0.99 0 0);
+    --color-fd-card: rgba(40, 40, 40, 0.4);
+    --color-fd-secondary: #18181b;
+    --color-fd-accent: #2c2c2c;
+    --color-fd-popover: #383435;
+    --color-fd-border: rgba(255, 255, 255, 0.1);
+    --color-backdrop: rgba(0, 0, 0, 0.4);
+}
+
+/* Shiki dual-theme syntax highlighting mapping */
+pre [style*='--shiki-light'] {
+    color: var(--shiki-light);
+}
+
+.dark pre [style*='--shiki-dark'],
+[data-theme='dark'] pre [style*='--shiki-dark'] {
+    color: var(--shiki-dark) !important;
+}
