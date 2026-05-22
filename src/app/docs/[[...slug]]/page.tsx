@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title,
             description,
             type: 'article',
-            url: `https://design-patterns-atlas.vercel.app/docs/${slug?.join('/') || ''}`,
+            url: `https://design-patterns-learning.vercel.app/docs/${slug?.join('/') || ''}`,
             tags: data.tags,
             section: data.category ? getCategoryTitle(data.category) : undefined,
             authors: [data.author || 'Khánh Nguyên'],

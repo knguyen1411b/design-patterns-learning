@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next'
 import { source } from '@/lib/source'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://design-patterns-atlas.vercel.app'
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://design-patterns-learning.vercel.app'
 
     // Lấy tất cả các trang tài liệu từ Fumadocs
     const pages = source.getPages()

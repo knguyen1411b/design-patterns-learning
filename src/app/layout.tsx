@@ -16,7 +16,7 @@ const inter = Inter({
     variable: '--font-inter'
 })
 export const metadata: Metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://design-patterns-atlas.vercel.app'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://design-patterns-learning.vercel.app'),
     title: {
         default: 'Design Patterns Atlas',
         template: '%s | Design Patterns Atlas'
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'vi_VN',
-        url: 'https://design-patterns-atlas.vercel.app',
+        url: 'https://design-patterns-learning.vercel.app',
         title: 'Design Patterns Atlas',
         description:
             'Không gian tra cứu và học tập mẫu thiết kế (Design Patterns) theo hướng học thuật, trực quan và thực hành cho lập trình viên.',
