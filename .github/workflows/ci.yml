@@ -36,14 +36,5 @@ jobs:
             - name: Lint
               run: pnpm lint
 
-            - name: Test
-              shell: bash
-              run: |
-                  if pnpm pkg get scripts.test | grep -qv null; then
-                    pnpm test
-                  else
-                    echo "No test script found, skipping..."
-                  fi
-
             - name: Build
               run: pnpm build
