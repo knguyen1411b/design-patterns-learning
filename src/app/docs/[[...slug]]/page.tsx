@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+
 import { notFound } from 'next/navigation'
 
 import { Card, Chip } from '@heroui/react'
@@ -12,14 +14,14 @@ interface PatternPageData {
     level: 'beginner' | 'intermediate' | 'advanced'
     body: React.ComponentType<{ components?: import('mdx/types').MDXComponents }>
     toc: { depth: number; title: string; url: string }[]
+    tags?: string[]
+    related?: string[]
+    date?: string | Date
+    author?: string
 }
 
 type PageProps = {
     params: Promise<{ slug?: string[] }>
-}
-
-export async function generateStaticParams() {
-    return source.generateParams()
 }
 
 const getLevelTitle = (level: 'beginner' | 'intermediate' | 'advanced') => {
@@ -42,6 +44,49 @@ const getCategoryTitle = (category: 'creational' | 'structural' | 'behavioral') 
         default:
             return 'Mẫu thiết kế khởi tạo'
     }
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { slug } = await params
+    const page = source.getPage(slug)
+
+    if (!page) return {}
+
+    const data = page.data as unknown as PatternPageData
+    const title = page.data.title
+    const description = page.data.summary
+
+    const keywords = [
+        ...(data.tags || []),
+        data.category ? getCategoryTitle(data.category) : '',
+        'design patterns',
+        'mẫu thiết kế'
+    ].filter(Boolean)
+
+    return {
+        title,
+        description,
+        keywords,
+        openGraph: {
+            title,
+            description,
+            type: 'article',
+            url: `https://design-patterns-atlas.vercel.app/docs/${slug?.join('/') || ''}`,
+            tags: data.tags,
+            section: data.category ? getCategoryTitle(data.category) : undefined,
+            authors: [data.author || 'Khánh Nguyên'],
+            publishedTime: data.date ? new Date(data.date).toISOString() : undefined
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description
+        }
+    }
+}
+
+export async function generateStaticParams() {
+    return source.generateParams()
 }
 
 export default async function Page({ params }: PageProps) {

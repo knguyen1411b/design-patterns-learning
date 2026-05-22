@@ -41,7 +41,7 @@ export default function CustomSearchDialog(props: SharedProps) {
         <SearchDialog {...props} search={search} onSearchChange={setSearch} isLoading={query.isLoading}>
             <SearchDialogOverlay />
 
-            <SearchDialogContent className="bg-white/80 p-3">
+            <SearchDialogContent className="p-3">
                 <SearchDialogHeader>
                     <SearchDialogIcon />
 

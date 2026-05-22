@@ -11,6 +11,20 @@ Tất cả các bài học đều được trang bị mã nguồn ví dụ hoàn
 
 ---
 
+## 📸 Giao diện ứng dụng
+
+<p align="center">
+  <img src="./public/image.png" alt="Giao diện trang chủ Design Patterns Atlas" width="800px" style="border-radius: 8px; margin-bottom: 20px;" />
+</p>
+<p align="center">
+  <img src="./public/image-1.png" alt="Sơ đồ minh họa" width="800px" style="border-radius: 8px; margin-bottom: 20px;" />
+</p>
+<p align="center">
+  <img src="./public/image-2.png" alt="Code minh họa" width="800px" style="border-radius: 8px;" />
+</p>
+
+---
+
 ## ✨ Tính năng nổi bật
 
 - 📚 **Đầy đủ 23/23 GoF Design Patterns**: Chia thành 3 nhóm lớn (Creational, Structural, Behavioral).
